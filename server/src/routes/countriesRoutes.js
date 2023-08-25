@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const countriesRoutes = Router();
 
+//Countries Routes OK
 const getCountries = require("../controllers/getCountries");
 const getCountriesByName = require("../controllers/getCountriesByName");
 const getCountryById = require("../controllers/getCountryById");

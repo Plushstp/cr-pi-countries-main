@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const activitiesRoutes = Router();
 
+//Activities Routes OK
 const getActivities = require("../controllers/getActivities");
 const postActivities = require("../controllers/postActivities");
 

@@ -1,6 +1,8 @@
-const express = require("express"); //importamos el modulo express
+const express = require("express"); 
 const { conn } = require("../db");
-const { Activity, Country } = conn.models; //instancia de conexion de sequelize
+const { Activity, Country } = conn.models; 
+
+//POST Activities Funcionando OK
 
 const postActivities = async ({
     name, 
@@ -18,7 +20,7 @@ const postActivities = async ({
     });
     if (checkExistActivity.length>0) throw Error("Ya existe la actividad");
 
-    //const countryIdUpperCase = countryId.toUpperCase();
+
     const newActivity = await Activity.create({
         name,
         difficulty,

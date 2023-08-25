@@ -1,6 +1,8 @@
 const { Country } = require("../db");
 const axios = require("axios");
 
+//GET Countries Funcionando OK
+
 const getCountries = async () => {
     const countriesInDB = await Country.findAll();
     if (countriesInDB.length > 0){

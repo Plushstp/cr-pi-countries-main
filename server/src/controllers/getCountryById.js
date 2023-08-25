@@ -1,5 +1,7 @@
 const { Country, Activity } = require("../db");
 
+//GET Countries Por ID Funcionando OK
+
 const getCountryById = async (id) => {
     const countryId = id.toUpperCase();
 	console.log(countryId);
