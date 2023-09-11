@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
     getAllCountries,
+    getActivities,
     filterByContinent,
     sortByName,
     sortByPopulation,
@@ -15,7 +16,8 @@ import SearchBar from "../SearchBar/SearchBar";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const data = useSelector(state=>state.allCountries)
+  const dataCountries = useSelector(state=>state.allCountries)
+  const allactivities = useSelector(state=>state.activities);
 
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedSort, setSelectedSort] = useState("");
@@ -28,13 +30,14 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getAllCountries())
+    dispatch(getActivities())
   }, [])
 
-  const currentCards=data.slice(currentPage.initialIndex,currentPage.finalIndex) // tendremos un slice del array original q llega por props
+  const currentCards=dataCountries.slice(currentPage.initialIndex,currentPage.finalIndex) // tendremos un slice del array original q llega por props
         
-  const countries = data.length>10 ?  // por si menos de diez paises
+  const countries = dataCountries.length>10 ?  // por si menos de diez paises
     currentCards :
-    data
+    dataCountries
   
   const hanldeButtonBack =()=>{
     setCurrentPage({
@@ -97,6 +100,9 @@ export default function Home() {
     const handleFilterByActivity = (act) => {
         const selectedOption = act.target.value
         setSelectedOption(selectedOption)
+        if (selectedOption === "Quitar") {
+          dispatch(getAllCountries())
+        }
         dispatch(filterByActivity(selectedOption))
     }
 
@@ -121,7 +127,6 @@ export default function Home() {
                         name={country.name}
                         flag={country.flag}
                         continent={country.continent}
-
                         key={country.id}
 
                       />)) : <p>Loading...</p>
@@ -130,7 +135,7 @@ export default function Home() {
             </div>
             <div className={styles.backnextButton}>
                 <button onClick={hanldeButtonBack} disabled={currentPage.initialIndex === 0}>Back</button>
-                <button onClick={handleButtonNext} disabled={currentPage.finalIndex >= data.length}>Next</button>
+                <button onClick={handleButtonNext} disabled={currentPage.finalIndex >= dataCountries.length}>Next</button>
             </div>
         </div>
       </div>

@@ -44,6 +44,7 @@ export default function Filters({
         <div className={styles.filter}>
           <select id="filterActiv" className={styles.select} onChange={handleFilterByActivity}>
             <option value=""> Actividades </option>
+            <option value="Quitar"> Quitar Filtro </option>
             {activities.map((activity) => (
               <option key={activity.id} value={activity.name}>
                 {activity.name}

@@ -67,7 +67,7 @@ export default function Form() {
   return (
     <div className={styles.formContainer}>
       <Nav />
-      <h1>Crear Actividad de Turismo para Paises</h1>
+      <h1 className={styles.h1}>Crear Actividad de Turismo para Paises</h1>
       <button className={styles.buttonForm} onClick={() => navigate("/home")}>Go back</button>
       <div className={styles.formContent}>
         <div className={styles.formContainer}>

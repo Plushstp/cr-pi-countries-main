@@ -66,10 +66,17 @@ import {
           ),
         };
       case FILTER_BY_ACTIVITY:
-        const filterActivity = state.countries.filter((country) => country.activities.includes(payload));
+        if (payload === "Quitar") {
+          return {
+            ...state,
+            allCountries: [...state.backCountries],
+          };
+        }
+        const allCountriesAct = state.backCountries
+        const activitiesFiltered = payload === 'Quitar' ? allCountriesAct : allCountriesAct.filter((el) => { return el.activities.find((c) => { return c.name === payload; }); });
         return {
           ...state,
-          backCountries: filterActivity
+          allCountries: activitiesFiltered
         };
       case SORT_BY_NAME:
         if (payload === "Todos") {

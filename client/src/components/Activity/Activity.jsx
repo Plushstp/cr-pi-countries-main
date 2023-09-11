@@ -15,12 +15,11 @@ const Activity = ({ name, duration, difficulty, season }) => {
     : '';
     return (
       <>
-      <div className={styles.cardActivity}>
-        <h2>{name}</h2>
-        <p>Dificultad: <b>{difficulty}</b></p>
-        <p>Duracion en horas: <b>{duration}</b></p>
-        <p>Temporada del año: <b>{seasonName}</b></p>
-
+      <div className={styles.activityContent}>
+        <h3>{name}</h3>
+        <h5>Dificultad: {difficulty}</h5>
+        <h5>Duracion en horas: {duration}</h5>
+        <h5>Temporada del año: {seasonName}</h5>
       </div>
     </>
   );

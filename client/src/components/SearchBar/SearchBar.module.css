@@ -1,26 +1,25 @@
 .buttonNav{
     border-radius: 10px;
-    background-color: rgba(227, 136, 24, 0.912);
+    background-color: rgb(30, 210, 255);
     border: none;
     width: 100px;
     height: 40px;
     font-weight: bold;
-    font-family: 'Lucida Sans';
     margin-left: 10px;
 }
   
 .buttonNav:hover {
-    background-color: rgb(130, 80, 9);
-    color: aliceblue;
-    border-color: black;
+    background-color: aliceblue;
+    color: rgb(30, 210, 255);
+    border: 1px solid rgb(30, 210, 255);
 }
 
 .inputSerch{
     border-radius: 10px;
     height: 30px;
-    background-color: blanchedalmond;
-    border: none;
-    color: black;
+    background-color: transparent !important;
+    border: 1px solid rgb(30, 210, 255) !important;
+    color: rgb(30, 210, 255) !important;
     font-size: 18px;
     margin-right: 5px;
 }
