@@ -1,0 +1,100 @@
+.containerDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;      
+    height: 100vh;
+    width: 100vw; 
+    padding: 0.1%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;          
+}
+
+.continents {
+    flex: 6;
+    transition: flex 0.5s ease;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+  
+.content {
+    max-width: 50%;
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    text-align: start;
+}
+
+.targetActivities{ 
+    max-width: 50%;
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    text-align: start;
+}
+
+.divTargets{
+    overflow-y : scroll;
+    margin-bottom: 5%;
+    color: rgb(30, 210, 255);
+}
+
+.h1{
+    font-size: 40px;
+    color: rgb(30, 210, 255);
+    font-weight: bolder;
+    margin-bottom: 30px; 
+}
+
+.h2{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 30px; 
+}
+
+.detailDesc {
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(30, 210, 255);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+  
+.detailTitle {
+    font-size: 40px;
+    color: rgb(30, 210, 255);
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.img {
+    grid-row: 1/6;
+    grid-column: 1/2;
+    width: 80%;
+    box-shadow: 17px 5px rgb(169, 231, 247);    
+    border: solid 3px;          
+}
+
+.goBackButton {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    color: rgb(30, 210, 255);
+    background-color: transparent;
+    border: solid rgb(30, 210, 255);
+    border-width: 1px;
+    transition: ease-in-out 0.3s;
+}
+  
+.goBackButton:hover {
+    color:aliceblue;
+    background: rgb(30, 210, 255);
+}

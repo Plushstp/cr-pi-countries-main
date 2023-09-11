@@ -1,0 +1,56 @@
+.container {
+    flex: 0 0 15%;
+    max-width: 30%;
+    margin-left: 12rem;
+}
+
+.mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-left: 12rem;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+  
+.title {
+    display: flex;
+    align-items: center;
+}
+  
+.cardGrid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    padding: 2rem;
+    width: 100%;
+}
+
+.backnextButton {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    color: rgb(30, 210, 255);
+
+
+
+    transition: ease-in-out 0.3s;
+}
+   
+.backnextButton:hover {
+    color:aliceblue;
+    background: rgb(30, 210, 255);
+}
+   
+.backnextButton.activeButton {
+    color:aliceblue;
+    background: rgb(30, 210, 255);
+}

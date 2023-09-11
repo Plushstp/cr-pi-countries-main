@@ -1,0 +1,103 @@
+.navbar {
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 80px;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-wrap: wrap;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgb(30, 109, 255);
+}
+
+
+.flexNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.searchForm {
+    display: flex;
+    right: 20%;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.searchInputContainer {
+    display: flex;
+    align-items: center;
+    background-color:rgb(30, 210, 255);
+    border: 1px solid rgb(30, 109, 255);
+    border-radius: 5px;
+    width: 250px;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.searchButton {
+    margin: 0;
+    padding: 6px 16px;
+    background-color: rgb(30, 210, 255);
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+  
+.searchButton:hover {
+    background-color: aliceblue;
+    border: 1px;
+    color: rgb(30, 210, 255);
+}
+  
+.searchIcon {
+    margin-left: 10px;
+    width: 15px;
+}
+  
+.inputSearch {
+    flex: 1;
+    border: none;
+    color: rgb(30, 210, 255) !important;
+    background-color: aliceblue !important;
+}
+  
+.activeClassHome {
+    color: rgb(235, 235, 235) !important;
+    text-shadow: 0px 0px 6px #b3dde2;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.activeClassForm {
+    color: rgb(235, 235, 235) !important;
+    text-shadow: 0px 0px 6px #b3dde2;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.activeClassActivities {
+    color: rgb(235, 235, 235) !important;
+    text-shadow: 0px 0px 6px #b3dde2;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    font-size: 20px;
+    font-weight: bolder;
+}

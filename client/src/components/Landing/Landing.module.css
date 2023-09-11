@@ -1,0 +1,59 @@
+.landingPage {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.videoWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+  
+.videoBackground {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.videoBackground {
+    filter: brightness(70%) opacity(0.91);
+}
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+  
+.title {
+    font-size: 36px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #c6eaf5; /* Color del texto */
+    text-shadow: 0 0 5px #805e97, 0 0 10px #805e97, 0 0 15px #805e97,
+      0 0 20px #77bbcf, 0 0 30px #77bbcf, 0 0 40px #77bbcf, 0 0 55px #77bbcf;
+    margin-bottom: 20px;
+}
+  
+.landingButton {
+    background-color: transparent;
+    color: #77bbcf; /* Color del texto */
+    border: 2px solid #77bbcf; /* Borde blanco de 2 píxeles */
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(94, 92, 92, 0.2), 0 0 10px rgba(94, 92, 92, 0.2),
+      0 0 15px rgba(94, 92, 92, 0.2), 0 0 20px rgba(4, 111, 199, 0.2),
+      0 0 30px rgba(4, 111, 199, 0.2), 0 0 40px rgba(4, 111, 199, 0.2),
+      0 0 55px rgba(4, 111, 199, 0.2);
+    padding: 10px 40px; /* Ajusta los valores de padding según sea necesario */
+    font-size: 16px;
+    cursor: pointer;
+}
+.landingButton:hover {
+    transition: 0.3s ease;
+    background-color: rgba(155, 202, 216, 0.651);
+    color: rgb(14, 96, 151);
+}

@@ -1,0 +1,57 @@
+.card {
+    position: relative;
+    width: 300px; /* Ajusta el ancho de la card según tus necesidades */
+    height: 200px; /* Ajusta la altura de la card según tus necesidades */
+    border-radius: 10px; /* Ajusta el radio de los bordes según tus preferencias */
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Agrega una transición suave para la transformación */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+  
+.card:hover {
+    transform: scale(1.05); /* Ajusta el nivel de agrandamiento que desees al pasar el mouse */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+  
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease; /* Agrega una transición suave para la opacidad */
+}
+  
+.card:hover .cardImage {
+    opacity: 0.5; /* Ajusta el nivel de opacidad que desees al pasar el mouse */
+}
+  
+.cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    z-index: 2;
+    opacity: 0; /* Inicialmente, el contenido estará oculto */
+    transition: opacity 0.3s ease; /* Agrega una transición suave para la opacidad */
+}
+  
+.card:hover .cardContent {
+    opacity: 1; /* Al pasar el mouse, el contenido se mostrará con opacidad completa */
+}
+  
+/* Ajusta el estilo de los títulos según tus preferencias */
+h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+  
+h5 {
+    margin: 5px 0;
+    font-size: 14px;
+}
