@@ -9,27 +9,25 @@ export default function SearchBar (){
     const dispatch = useDispatch();
     const [name, setName] = useState("");
        
-    function handleInputChange (e){
-        e.preventDefault()
-        setName(e.target.value)
+    function handleInputChange (event){
+        event.preventDefault();
+        setName(event.target.value);
         
-        console.log(name)
-    }
+        console.log(name);
+    };
 
-    function handleSubmit (e){
-        e.preventDefault()
-        if (name.length === 0) return alert('Debe colocar un Pais');
-        dispatch(getCountryByName(name))
-        setName('')
+    function handleSubmit (event){
+        event.preventDefault();
+        if (name.length === 0) return alert('Debe ingresar un País en el cuadro de búsqueda');
+        dispatch(getCountryByName(name));
+        setName('');
     }
 
     return(
-
         <div>
-            <input className={style.inputSerch} type='text' value={name}  pattern="[a-zA-Z ]{2,254}" placeholder="Buscar..." onChange={(e) => handleInputChange(e)} required/>
+            <input className={style.inputSearch} type='text' value={name} placeholder="Nombre de país..." onChange={(event) => handleInputChange(event)} required/>
 
-            <button className={style.buttonNav} type="submit" value="" onClick={(e) => handleSubmit(e)}>Buscar</button>
-            
+            <button className={style.buttonNav} type="submit" value="" onClick={(event) => handleSubmit(event)}>Buscar</button>
         </div>
     )
-}
+};

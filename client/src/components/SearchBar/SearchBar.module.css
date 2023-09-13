@@ -1,20 +1,22 @@
 .buttonNav{
     border-radius: 10px;
-    background-color: rgb(30, 210, 255);
-    border: none;
+    background-color: aliceblue;
+    color: rgb(30, 210, 255);
+    border: 1px solid rgb(30, 210, 255);
     width: 100px;
     height: 40px;
     font-weight: bold;
+    margin-top: 5px;
     margin-left: 10px;
 }
   
 .buttonNav:hover {
-    background-color: aliceblue;
-    color: rgb(30, 210, 255);
+    background-color:rgb(30, 210, 255);
+    color: aliceblue;
     border: 1px solid rgb(30, 210, 255);
 }
 
-.inputSerch{
+.inputSearch{
     border-radius: 10px;
     height: 30px;
     background-color: transparent !important;

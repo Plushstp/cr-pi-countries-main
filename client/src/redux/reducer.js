@@ -27,15 +27,9 @@ import {
           backCountries: payload
         };
       case SEARCH_COUNTRY_NAME:
-        if(payload===''){ // si borra el nombre, volvemos a mostar todos
-          return {
-              ...state,
-              allCountries:state.backCountries
-          }
-        }
         return {
           ...state,
-          allCountries:payload,
+          allCountries:payload
         }
       case GET_ACTIVITIES:
         return {
@@ -72,14 +66,13 @@ import {
             allCountries: [...state.backCountries],
           };
         }
-        const allCountriesAct = state.backCountries
-        const activitiesFiltered = payload === 'Quitar' ? allCountriesAct : allCountriesAct.filter((el) => { return el.activities.find((c) => { return c.name === payload; }); });
+        const activitiesFiltered = state.activities.find((activity)=>activity.name===payload)
         return {
           ...state,
           allCountries: activitiesFiltered
         };
       case SORT_BY_NAME:
-        if (payload === "Todos") {
+        if (payload === "Quitar") {
           return {
             ...state,
             allCountries: [...state.backCountries],
@@ -105,24 +98,14 @@ import {
             allCountries: [...state.backCountries],
           };
         }
-        const sortedPop = action.payload === "ascendent" ? 
-        state.allCountries.sort(function(a,b){
-          if (a.population > b.population) {
-            return -1;
-          } 
-          if (b.population > a.population) {
-            return 1;
+        const { orderPopulation } = payload
+        const sortedPop = [...state.allCountries].sort((a, b) =>{
+          if (orderPopulation === "ascendent") {
+            return a.population - b.population
+          } else if (orderPopulation === "descendent") {
+            return b.population - a.population
           }
-          return 0;
-        }):
-        state.allCountries.sort(function(a,b){
-          if (a.population > b.population) {
-            return 1;
-          } 
-          if (b.population > a.population) {
-            return -1;
-          }
-          return 0;
+          return 0
         });
         return {
           ...state,

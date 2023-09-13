@@ -67,7 +67,7 @@ export default function Form() {
   return (
     <div className={styles.formContainer}>
       <Nav />
-      <h1 className={styles.h1}>Crear Actividad de Turismo para Paises</h1>
+      <div className={styles.title}>Crear Actividad de Turismo para Paises</div>
       <button className={styles.buttonForm} onClick={() => navigate("/home")}>Go back</button>
       <div className={styles.formContent}>
         <div className={styles.formContainer}>
@@ -75,7 +75,7 @@ export default function Form() {
             <label htmlFor='name'>Nombre de Actividad: </label>
             <input
               name='name'
-              placeholder='nombre actividad...'
+              placeholder='Nombre hasta 30 caracteres...'
               type='text'
               onChange={handlerInputChange}
             />
@@ -96,7 +96,7 @@ export default function Form() {
               onChange={handlerInputChange}
             />
             <p>{errors.duration}</p>
-            <label htmlFor='season'>Estaciones: </label>
+            <label htmlFor='season'>Estaciones del año: </label>
               <select onChange={handlerInputChange} name='season'>
                   <option value=''>Select season</option>
                   <option value='Spring'>Primavera</option>

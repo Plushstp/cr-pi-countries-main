@@ -28,7 +28,7 @@ export const getAllCountries = () => {
 export const getCountryByName = (name) => {
     try {
         return async (dispatch) => {
-            const { data } = await axios.get(`http://localhost:3001/countries?name=${name}`);
+            const { data } = await axios.get(`http://localhost:3001/countries/name?name=${name}`);
             return dispatch({
                 type: SEARCH_COUNTRY_NAME,
                 payload: data,
@@ -87,7 +87,7 @@ export const filterByContinent = (filCont) => {
 export const filterByActivity = (filAct) => {
     return {
       type: FILTER_BY_ACTIVITY,
-      payload: filAct
+      payload: { filAct }
     };
 };
 

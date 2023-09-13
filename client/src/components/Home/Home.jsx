@@ -17,12 +17,12 @@ import SearchBar from "../SearchBar/SearchBar";
 export default function Home() {
   const dispatch = useDispatch();
   const dataCountries = useSelector(state=>state.allCountries)
-  const allactivities = useSelector(state=>state.activities);
+  const activities = useSelector(state=>state.activities);
 
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedSort, setSelectedSort] = useState("");
   
-  const cardsForPage = 10 // para renderizar solo 10 tarjetas de paises por pag.
+  const cardsForPage = 10 
   const [currentPage, setCurrentPage] = useState({
     initialIndex:0,
     finalIndex:cardsForPage
@@ -33,9 +33,8 @@ export default function Home() {
     dispatch(getActivities())
   }, [])
 
-  const currentCards=dataCountries.slice(currentPage.initialIndex,currentPage.finalIndex) // tendremos un slice del array original q llega por props
-        
-  const countries = dataCountries.length>10 ?  // por si menos de diez paises
+  const currentCards=dataCountries.slice(currentPage.initialIndex,currentPage.finalIndex) 
+  const countries = dataCountries.length>10 ? 
     currentCards :
     dataCountries
   
@@ -127,6 +126,7 @@ export default function Home() {
                         name={country.name}
                         flag={country.flag}
                         continent={country.continent}
+                        population={country.population}
                         key={country.id}
 
                       />)) : <p>Loading...</p>
@@ -142,8 +142,8 @@ export default function Home() {
     )
 };
 
-/*No van
+/*No se pide que muestre en el Home. Solo para pruebas
                         capital={country.capital}
                         subregion={country.subregion}
                         area={country.area}
-                        population={country.population}*/
+                        */

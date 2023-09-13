@@ -24,7 +24,7 @@ const Card = ({
           <div className={styles.cardContent}>
             <h3>{name}</h3>
             <h5>Continent: {continent}</h5>
-
+            <h5>Population: {population}</h5>
 
           </div>
         </div>
@@ -34,7 +34,7 @@ const Card = ({
   
   export default Card
 
-  /*no van
+  /* No piden que se muestre, solo para agregar para pruebas
               <h5>Capital: {capital}</h5>
               <h5>Subregion: {subregion}</h5>
             <h5>Area: {area}</h5>

@@ -38,10 +38,8 @@
     position: absolute;
     top: 90%;
     left: 50%;
+    border-radius: 10px;
     color: rgb(30, 210, 255);
-
-
-
     transition: ease-in-out 0.3s;
 }
    

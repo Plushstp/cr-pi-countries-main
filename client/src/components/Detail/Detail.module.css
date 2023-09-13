@@ -78,7 +78,7 @@
 .img {
     grid-row: 1/6;
     grid-column: 1/2;
-    width: 80%;
+    width: 150px;
     box-shadow: 17px 5px rgb(169, 231, 247);    
     border: solid 3px;          
 }

@@ -3,8 +3,6 @@ import { useLocation } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 import styles from "../Nav/Nav.module.css"
 
-
-
 export default function Nav() {
 
   const location = useLocation()

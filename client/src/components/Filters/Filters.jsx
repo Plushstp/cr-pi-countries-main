@@ -2,14 +2,12 @@ import React from "react"
 import styles from "../Filters/Filters.module.css"
 import { useSelector } from "react-redux"
 
-export default function Filters({
-    selectedOption,
-    handleFilterContinent,
-    handleSortByPopulation,
-    handleFilterByActivity,
-    handleSortByName
-  }) {
-    const activities = useSelector((state) => state.activities)
+
+export default function Filters({selectedOption, handleFilterContinent, handleSortByPopulation, handleFilterByActivity, handleSortByName}) {
+
+    const activities = useSelector((state) => state.activities);
+     
+  
     return (
       <div className={styles.filters}>
         <div className={styles.filter}>
@@ -45,11 +43,9 @@ export default function Filters({
           <select id="filterActiv" className={styles.select} onChange={handleFilterByActivity}>
             <option value=""> Actividades </option>
             <option value="Quitar"> Quitar Filtro </option>
-            {activities.map((activity) => (
-              <option key={activity.id} value={activity.name}>
-                {activity.name}
-              </option>
-            ))}
+            { activities.length > 0 ? activities.map((activity) => (
+              <option key={activity.id} value={activity.name}>{activity.name}</option>
+            )) : (<option value='' disabled>Sin actividades</option>)}
           </select>
         </div>
       </div>
