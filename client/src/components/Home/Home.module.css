@@ -13,17 +13,7 @@
     margin-left: 12rem;
 }
 
-.titleContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-  
-.title {
-    display: flex;
-    align-items: center;
-}
+
   
 .cardGrid {
     display: grid;

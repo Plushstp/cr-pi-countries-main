@@ -14,13 +14,13 @@ export default function Detail() {
   const countryDetail = useSelector((state)=>state.countriesDetail) //variable global
   const dispatch = useDispatch() // para accionar el getdetail, y el cleanDetail
   const {id:idDetail} = useParams() // traemos el id q nos viene por params en la URL
-  //const backgroundImageStyle = countriesDetail.flag;
+  
   const navigate = useNavigate();
 
   useEffect(()=>{
-    dispatch(getDetail(idDetail)) //will did mountain
+    dispatch(getDetail(idDetail)) 
     return ()=>{
-        dispatch(cleanDetail()) // will unmount
+        dispatch(cleanDetail()) 
     }        
   },[idDetail])
 

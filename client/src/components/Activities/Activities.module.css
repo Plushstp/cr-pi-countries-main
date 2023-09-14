@@ -1,36 +1,38 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100vw; 
-    padding: 0.1%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;   
+    flex: 0 0 15%;
+    max-width: 30%;
+    margin-left: 1rem;
 }
   
 .mainContent {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin-top: 5rem;
-    margin-left: 12rem;
+    margin-top: 10rem;
+    margin-left: 10rem;
+    position: relative;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: rgb(30, 210, 255) !important;
+    font-weight: bolder;
+    margin-bottom: 10px; 
 }
   
 .cardGrid {
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
-    padding: 2rem;
-    width: 100%;
-    color: rgb(30, 210, 255);
+    flex-direction: row;
+    overflow-x: scroll; 
+    width: 80vw;
+    justify-content: center;   
 }
 
 .goBackButton {
     position: absolute;
-    top: 90%;
+    top: 80%;
     left: 50%;
     color: rgb(30, 210, 255);
     background-color: transparent;
