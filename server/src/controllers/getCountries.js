@@ -1,10 +1,18 @@
-const { Country } = require("../db");
+const { Country, Activity } = require("../db");
 const axios = require("axios");
 
 //GET Countries Funcionando OK
 
 const getCountries = async () => {
-    const countriesInDB = await Country.findAll();
+    const countriesInDB = await Country.findAll({
+        include:{
+            model: Activity,
+            attributes: ["name", "difficulty", "duration", "season"],
+            through: {
+                attributes: [],
+            },
+        },
+    });
     if (countriesInDB.length > 0){
         return countriesInDB;
     } else {

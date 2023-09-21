@@ -5,13 +5,13 @@ import { useSelector } from "react-redux"
 
 export default function Filters({selectedOption, handleFilterContinent, handleSortByPopulation, handleFilterByActivity, handleSortByName}) {
 
-    const activities = useSelector((state) => state.activities);
+    const activities = useSelector((state) => state.allActivities);
      
   
     return (
       <div className={styles.filters}>
         <div className={styles.filter}>
-          <select id="sortName" className={styles.select} onChange={handleSortByName}>
+          <select id="sortName" className={styles.select} value={selectedOption} onChange={handleSortByName}>
             <option value=""> Ordenar por Nombre </option>
             <option value="Quitar">Quitar Orden</option>
             <option value="ascendent">A - Z</option>
@@ -40,7 +40,7 @@ export default function Filters({selectedOption, handleFilterContinent, handleSo
           </select>
         </div>
         <div className={styles.filter}>
-          <select id="filterActiv" className={styles.select} onChange={handleFilterByActivity}>
+          <select id="filterActiv" className={styles.select} value={selectedOption} onChange={handleFilterByActivity}>
             <option value=""> Actividades </option>
             <option value="Quitar"> Quitar Filtro </option>
             { activities.length > 0 ? activities.map((activity) => (

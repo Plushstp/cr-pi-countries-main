@@ -84,10 +84,10 @@ export const filterByContinent = (filCont) => {
     };
 };
 
-export const filterByActivity = (filAct) => {
+export const filterByActivity = (payload) => {
     return {
       type: FILTER_BY_ACTIVITY,
-      payload: { filAct }
+      payload,
     };
 };
 

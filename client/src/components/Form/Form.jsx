@@ -63,6 +63,13 @@ export default function Form() {
     }
   }
 
+  const handleActivitySelect = (e) => {
+    setInput({
+      ...input,
+      name: e.target.value,
+    });
+  };
+
   const onSubmit = (event) => {
     event.preventDefault()
     if (input.name === "" ||
@@ -91,13 +98,32 @@ export default function Form() {
         <div className={styles.formContainer}>
           <form onSubmit={onSubmit}>
             <label htmlFor='name'>Nombre de Actividad: </label>
-            <input
-              name='name'
-              placeholder='Nombre hasta 30 caracteres...'
-              type='text'
-              value={input.name}
-              onChange={handlerInputChange}
-            />
+            <select name="select" onChange={(e) => handleActivitySelect(e)}>
+            <option value="Select Activity Name">Tourist Activity</option>
+            <option value="Adventure Turism">Turism</option>
+            <option value="Art gallery tours">Art gallery tours</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Boxing">Boxing</option>
+            <option value="City walking tours">City walking tours</option>
+            <option value="Climbing">Climbing</option>
+            <option value="Cricket">Cricket</option>
+            <option value="Cycling tours">Cycling tours</option>
+            <option value="Farm visits ">Farm visits</option>
+            <option value="Fishing">Fishing</option>
+            <option value="Football">American Football</option>
+            <option value="Music festivals">Music festivals</option>
+            <option value="Museum visits">Museum visits</option>
+            <option value="Ping Pong">Ping Pong</option>
+            <option value="Racing">Racing</option>
+            <option value="Rugby">Rugby</option>
+            <option value="Snowboard">Snowboard</option>
+            <option value="Soccer">Soccer</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Tennis">Tennis</option>
+            <option value="Volley">Volley</option>
+            <option value="Waterpolo">Waterpolo</option>
+            </select>
+
             {errors.name && (
               <p className={styles.p}>{errors.name}</p>
             )}
@@ -185,3 +211,13 @@ export default function Form() {
     </div>
   );
 };
+
+/*
+<input
+name='name'
+placeholder='Nombre hasta 30 caracteres...'
+type='text'
+value={input.name}
+onChange={handlerInputChange}
+/>
+*/

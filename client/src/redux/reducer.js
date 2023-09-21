@@ -15,10 +15,11 @@ import {
     allCountries: [],
     backCountries: [],
     countriesDetail: {},
-    activities: [],
+    allActivities: [],
   };
   
   const rootReducer = (state = initialState, { type, payload }) => {
+
     switch (type) {
       case GET_ALL_COUNTRIES:
         return { 
@@ -34,7 +35,7 @@ import {
       case GET_ACTIVITIES:
         return {
           ...state,
-          activities: payload
+          allActivities: payload
         };
       case GET_DETAIL:
         return {
@@ -46,6 +47,7 @@ import {
           ...state,
           countriesDetail:{}
         };
+
       case FILTER_BY_CONTINENT:
         if (payload === "Todos") {
           return {
@@ -55,22 +57,11 @@ import {
         }
         return {
           ...state,
-          allCountries: [...state.backCountries].filter(
+          allCountries: [...state.allCountries].filter(
             (country) => country.continent.toUpperCase() === payload.toUpperCase()
           ),
         };
-      case FILTER_BY_ACTIVITY:
-        if (payload === "Quitar") {
-          return {
-            ...state,
-            allCountries: [...state.backCountries],
-          };
-        }
-        const activitiesFiltered = state.activities.find((activity)=>activity.name===payload)
-        return {
-          ...state,
-          allCountries: activitiesFiltered
-        };
+
       case SORT_BY_NAME:
         if (payload === "Quitar") {
           return {
@@ -111,11 +102,25 @@ import {
           ...state,
           allCountries: sortedPop,
         };
+      case FILTER_BY_ACTIVITY:
+        if (payload === "Quitar") {
+          return {
+            ...state,
+            allCountries: [...state.backCountries],
+          };
+        }
+        const countries = state.allCountries.filter((c) => 
+        c.Activities.some((activity) => activity.name === payload)
+        )
+        return { ...state,
+          allCountries: countries
+        };
+
       case POST_ACTIVITY:
         return {
           ...state,
           activities: [...state.activities, payload]
-        }  
+        };
       default:
         return { ...state };
     }

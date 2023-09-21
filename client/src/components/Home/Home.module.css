@@ -42,3 +42,10 @@
     color:aliceblue;
     background: rgb(30, 210, 255);
 }
+
+.actividades {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}

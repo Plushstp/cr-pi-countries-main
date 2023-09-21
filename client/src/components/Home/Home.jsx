@@ -16,24 +16,24 @@ import SearchBar from "../SearchBar/SearchBar";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const dataCountries = useSelector(state=>state.allCountries)
-  const activities = useSelector(state=>state.activities);
+  const dataCountries = useSelector(state=>state.allCountries);
+  const allActivities = useSelector(state=>state.allActivities);
 
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedSort, setSelectedSort] = useState("");
-  
-  const cardsForPage = 10 
-  const [currentPage, setCurrentPage] = useState({
-    initialIndex:0,
-    finalIndex:cardsForPage
-  })
 
+ 
   useEffect(() => {
     dispatch(getAllCountries())
     dispatch(getActivities())
   }, [])
 
-  const currentCards=dataCountries.slice(currentPage.initialIndex,currentPage.finalIndex) 
+  const cardsForPage = 10 
+  const [currentPage, setCurrentPage] = useState({
+    initialIndex:0,
+    finalIndex:cardsForPage
+  })
+  const currentCards = dataCountries.slice(currentPage.initialIndex,currentPage.finalIndex) 
   const countries = dataCountries.length>10 ? 
     currentCards :
     dataCountries
@@ -74,36 +74,38 @@ export default function Home() {
     }
   }
 
-    const handleFilterContinent = (cont) => {
-        const selectedOption = cont.target.value
-        setSelectedOption(selectedOption)
-        if (selectedOption === "Todos") {
-          dispatch(getAllCountries())
-        } else if (selectedOption === "North America") {
-            dispatch(filterByContinent("North America"))
-        } else if (selectedOption === "South America") {
+  const handleFilterContinent = (cont) => {
+      const selectedOption = cont.target.value
+      setSelectedOption(selectedOption)
+      if (selectedOption === "Todos") {
+        dispatch(getAllCountries())
+      } else if (selectedOption === "North America") {
+          dispatch(filterByContinent("North America"))
+      } else if (selectedOption === "South America") {
           dispatch(filterByContinent("South America"))
-        } else if (selectedOption === "Europe") {
-            dispatch(filterByContinent("Europe"))
-        } else if (selectedOption === "Asia") {
-            dispatch(filterByContinent("Asia"))
-        } else if (selectedOption === "Africa") {
-            dispatch(filterByContinent("Africa"))
-        } else if (selectedOption === "Oceania") {
-            dispatch(filterByContinent("Oceania"))
-        } else if (selectedOption === "Antarctica") {
-          dispatch(filterByContinent("Antarctica"))
-        }
-    }
+      } else if (selectedOption === "Europe") {
+          dispatch(filterByContinent("Europe"))
+      } else if (selectedOption === "Asia") {
+          dispatch(filterByContinent("Asia"))
+      } else if (selectedOption === "Africa") {
+          dispatch(filterByContinent("Africa"))
+      } else if (selectedOption === "Oceania") {
+          dispatch(filterByContinent("Oceania"))
+      } else if (selectedOption === "Antarctica") {
+        dispatch(filterByContinent("Antarctica"))
+      }
+  }
 
-    const handleFilterByActivity = (act) => {
-        const selectedOption = act.target.value
-        setSelectedOption(selectedOption)
-        if (selectedOption === "Quitar") {
-          dispatch(getAllCountries())
-        }
-        dispatch(filterByActivity(selectedOption))
+ 
+
+  const handleFilterByActivity = (e) => {
+    const selectedOption = e.target.value
+    setSelectedOption(selectedOption)
+    if (selectedOption === "Quitar") {
+      dispatch(getAllCountries())
     }
+    dispatch(filterByActivity(selectedOption))
+  }
 
     return (
       <div className={styles.container}>
@@ -129,7 +131,7 @@ export default function Home() {
                         population={country.population}
                         key={country.id}
 
-                      />)) : <p>Loading...</p>
+                      />)) : <div>No existe pais!</div>
                     
                   }
             </div>

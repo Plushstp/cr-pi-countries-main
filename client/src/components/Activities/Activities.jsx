@@ -10,7 +10,7 @@ import Nav from "../Nav/Nav";
 const Activities = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const activities = useSelector((state) => state.activities);
+    const activities = useSelector((state) => state.allActivities);
     const [selectedActivity, setSelectedActivity] = useState('');
 
     useEffect(() => {

@@ -16,8 +16,14 @@ export default function Nav() {
       <div> 
         <NavLink to="/home" className={({ isActive }) => isActive ? styles.activeClassHome : { color: "#93a8b4" }}> Home </NavLink>
         <NavLink to="/form" className={({ isActive }) => isActive ? styles.activeClassForm : { color: "#93a8b4" }}> Form </NavLink>
-        <NavLink to="/activities" className={({ isActive }) => isActive ? styles.activeClassActivities : { color: "#93a8b4" }}> Activities </NavLink>
+
       </div>
     </nav>
   )
 }
+
+/* No pide componentes Activities, tampoco me gusta como queda
+
+        <NavLink to="/activities" className={({ isActive }) => isActive ? styles.activeClassActivities : { color: "#93a8b4" }}> Activities </NavLink>
+    
+*/
